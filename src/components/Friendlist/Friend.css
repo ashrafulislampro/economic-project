@@ -1,0 +1,26 @@
+.content{
+    display: flex;
+    border: 2px solid crimson;
+    margin-left: 170px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 700px;
+    
+    
+}
+.imgStyle{
+    width: 250px;
+   
+}
+.text-container{
+    text-align: left;
+    margin-left: 8px;
+   
+}
+.btn{
+    width: 150px;
+    height: 25px;
+    background-color: goldenrod;
+    border-radius: 5px;
+    cursor: pointer;
+}

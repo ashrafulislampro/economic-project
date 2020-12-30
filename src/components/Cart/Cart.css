@@ -1,0 +1,13 @@
+.cart-container{
+    border: 1px solid crimson;
+    border-radius: 5px;
+    width: 300px;
+    height: 230px;
+    margin-left: 50px;
+    background-color:lightgray;
+
+}
+.text-items{
+    margin-left: 35px;
+    text-align: left;
+}

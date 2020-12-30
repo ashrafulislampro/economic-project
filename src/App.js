@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { useEffect, useState } from 'react';
+import './App.css';
+import Cart from './components/Cart/Cart';
+import Friend from './components/Friendlist/Friend';
+import companies from './data/data2.json';
 function App() {
+  
+  const [friends, setFriend] = useState([]);
+  
+  useEffect(() =>{
+    setFriend(companies);
+  },[])
+  const [cart, setCart] = useState([]);
+  const handleAddFriend = (friend) => {
+    const newCart = [...cart,friend];
+    setCart(newCart);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Friends Collection : {friends.length}</h1> 
+      <div className="container">
+        <div>
+          {
+            friends.map(fri => <Friend friend={fri} key={fri.id} handleAddFriend={handleAddFriend}></Friend>)
+          } 
+        </div>
+        <div>
+          <Cart cart={cart}></Cart>
+        </div>
+      </div>  
     </div>
   );
 }
